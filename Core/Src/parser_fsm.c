@@ -58,12 +58,10 @@ void command_parser_fsm(void) {
                     parser_state = WAIT_START;
                 }
                 else {
-                    // Lưu ký tự nếu chưa overflow
                     if(cmd_index < 30) {
                         command_data[cmd_index++] = c;
                     }
                     else {
-                        // Tràn → đánh dấu
                         overflow_flag = 1;
                     }
                 }
